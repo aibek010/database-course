@@ -1,0 +1,27 @@
+1. **INNER JOIN** returns only matching rows from both tables. **LEFT JOIN** returns all rows from left table with matching rows from right table (NULLs if no match).
+
+2. **CROSS JOIN** practical uses:
+   - Availability matrices (employees × projects)
+   - Generating test data
+   - Creating calendars/schedules
+   - Combinatorial calculations
+
+3. **ON** filters before joining (preserves outer join rows), **WHERE** filters after joining. For INNER JOIN both work same since non-matching rows are excluded anyway.
+
+4. **50 rows** (5 × 10 = 50)
+
+5. **NATURAL JOIN** automatically joins tables using all columns with identical names from both tables.
+
+6. **Risks of NATURAL JOIN**:
+   - Unintended joins if column names match unexpectedly
+   - Breaks if table structure changes
+   - Reduced query clarity
+
+7. ```sql
+   SELECT * FROM B RIGHT JOIN A ON B.id = A.id
+   ```
+
+8. Use **FULL OUTER JOIN** when you need:
+   - All records from both tables
+   - To identify orphaned records in both tables
+   - Complete data reconciliation between two datasets
